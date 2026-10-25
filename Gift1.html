@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>သီတင်းကျွတ် ဆုတောင်း</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pyidaungsu', 'Myanmar Text', sans-serif;
+    background-image: url('https://i.ibb.co/JWvxsYJG/file-0000000059048211ab719cf45ede434e.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.6);
+    z-index: 0;
+  }
+  
+  .gift-box {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 120, 0.5);
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 520px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(255, 200, 80, 0.15);
+    animation: fadeIn 1.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+  .moon {
+    font-size: 60px;
+    margin-bottom: 15px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  
+  h1 {
+    color: #ffe9b0;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  
+  p {
+    color: #fff8e7;
+    font-size: 17px;
+    line-height: 2;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+  }
+  
+  .wish {
+    margin-top: 20px;
+    font-size: 15px;
+    color: #ffd66b;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="gift-box">
+    <div class="moon">🌕</div>
+    <h1>သီတင်းကျွတ် ဆုတောင်း</h1>
+    <p>
+      သီတင်းကျွတ်ကာလ မင်္ဂလာရှိပါစေ။<br>
+      ဘုရားရှင်ရဲ့ တရားတော်နဲ့အညီ<br>
+      ကိုယ်စိတ်နှစ်ပါး ချမ်းသာပါစေ။<br>
+      ဆုတောင်းတိုင်းပြည့်ပါစေ 🙏
+    </p>
+    <p class="wish">— သီတင်းကျွတ် ဆုတောင်းမှ မင်္ဂလာဖြစ်ပါစေ —</p>
+  </div>
+
+  <!-- 🎵 သီချင်းဖိုင် (တန်းပြီး အသံကြားရမည်) -->
+  <audio id="bgMusic" src="song.mp3" preload="auto" autoplay loop></audio>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+
+    // တန်းပြီး အကျယ်ကြီး ဖွင့်
+    music.volume = 1;
+    music.play().catch(err => {
+      console.log('Autoplay blocked:', err);
+      // Browser က block လုပ်ရင် ပထမဆုံး နှိပ်လိုက်တာနဲ့ ဖွင့်ပေးမယ်
+      const startMusic = () => {
+        music.volume = 1;
+        music.play().catch(e => console.log(e));
+        document.removeEventListener('click', startMusic);
+        document.removeEventListener('touchstart', startMusic);
+      };
+      document.addEventListener('click', startMusic);
+      document.addEventListener('touchstart', startMusic);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>သီတင်းကျွတ် ဆုတောင်းလက်ဆောင်</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pyidaungsu', 'Myanmar Text', sans-serif;
+    background-image: url('https://i.ibb.co/JWvxsYJG/file-0000000059048211ab719cf45ede434e.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 20, 40, 0.55);
+    z-index: 0;
+  }
+  
+  .box {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 215, 120, 0.5);
+    border-radius: 24px;
+    padding: 50px 40px;
+    max-width: 520px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 60px rgba(255, 200, 80, 0.15);
+    animation: glow 3s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 40px rgba(255,200,80,0.1); }
+    to   { box-shadow: 0 8px 40px rgba(0,0,0,0.4), 0 0 90px rgba(255,200,80,0.35); }
+  }
+  
+  .lantern {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .box h1 {
+    color: #ffe9b0;
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 16px 42px;
+    font-size: 17px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #3a2400;
+    background: linear-gradient(135deg, #ffd66b, #ffb347);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 180, 60, 0.45);
+  }
+  
+  .btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(255, 180, 60, 0.7);
+  }
+  
+  .btn:active { transform: scale(0.97); }
+</style>
+</head>
+<body>
+
+  <div class="box">
+    <div class="lantern">🏮</div>
+    <h1>သီတင်းကျွတ်မှာ မင်အတွက်<br>သီတင်းကျွတ်ဆုတောင်းလက်ဆောင်<br>ရှိတယ်</h1>
+    <a href="gift.html" class="btn">ဆုတောင်းလက်ဆောင် ကြည့်ရန်</a>
+  </div>
+
+</body>
+</html>
